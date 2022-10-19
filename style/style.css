@@ -72,4 +72,9 @@ ul {
   padding: 0;
   flex-direction: row;
   flex-wrap: wrap;
+}
+
+.delete--button {
+  border: none;
+  background-color: orangered;
 }/*# sourceMappingURL=style.css.map */

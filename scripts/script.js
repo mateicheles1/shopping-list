@@ -1,8 +1,7 @@
-
-const input = document.getElementById('input');
-const addBtn = document.getElementById('add--btn');
-const container = document.querySelector('.shopping--list__container');
-const shoppingList = document.querySelector('.shopping--list');
+import {input} from './elements.js';
+import {addBtn} from './elements.js';
+import {shoppingList} from './elements.js';
+import {shoppingContainer} from './elements.js';
 
 
 class Buttons {
@@ -17,12 +16,6 @@ class Buttons {
         return el;
     }
 
-    // createAddButton() {
-    //     const el = document.createElement('button');
-    //     el.classList.add('add--button');
-    //     el.textContent = 'Add';
-    //     return el;
-    // }
 }
 
 
@@ -49,11 +42,11 @@ class ShoppingList {
     print() {
         if(!input.value) return;
         const item = this.getElementItem();
-        // const addButton = this.getAddButton();
         const removeButton = this.getRemoveButton();
         this.parentElement.appendChild(item);
         this.parentElement.appendChild(removeButton);
     }
+
 
     getElementItem() {
         const item = new ShoppingItem(input.value);
@@ -67,12 +60,6 @@ class ShoppingList {
         return removeButton; 
     }
 
-    // getAddButton () {
-    //     const button = new Buttons();
-    //     const addButton = button.createAddButton();
-    //     return addButton;
-    // }
-
 
 }
 
@@ -80,8 +67,19 @@ function addItem(e) {
     e.preventDefault();
     const list = new ShoppingList(shoppingList);
     list.print();
+    const items = [...document.querySelectorAll('.shopping--item')];
+    items.forEach((item, i) => item.setAttribute('id', `${i + 1}`));
+    const buttons = [...document.querySelectorAll('.delete--button')];
+    buttons.forEach((btn, i) => btn.setAttribute('id', `${i + 1}`));
     input.value = '';
 }
 
+function removeItem (e) {
+    if(!e.target.classList.contains('delete--button')) return;
+    console.log(e.target.id);
+    
+}
+
 addBtn.addEventListener('click', addItem);
+shoppingContainer.addEventListener('click', removeItem);
 
