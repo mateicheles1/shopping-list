@@ -47,7 +47,6 @@ class ShoppingList {
         this.parentElement.appendChild(removeButton);
     }
 
-
     getElementItem() {
         const item = new ShoppingItem(input.value);
         const el = item.createElement();
@@ -76,7 +75,12 @@ function addItem(e) {
 
 function removeItem (e) {
     if(!e.target.classList.contains('delete--button')) return;
-    console.log(e.target.id);
+    const items = [...document.querySelectorAll('.shopping--item')];
+    const itemIDs = items.map(item => item.id);
+    if(e.target.id !== itemIDs.slice(-1).join('')) return;
+    console.log(`E: ${e.target.id}
+                ID: ${itemIDs.slice(-1).join('')}`);
+    
     
 }
 
