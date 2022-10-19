@@ -1,0 +1,75 @@
+body {
+  height: 100vh;
+  background: linear-gradient(to top left, #6EA0D7, #8680BF);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#header {
+  color: #6EA0D7;
+  text-align: center;
+  margin-bottom: 3rem;
+  margin-top: 0.2rem;
+  font-size: 1.5rem;
+}
+
+.main {
+  box-shadow: 3px 3px 5px grey;
+  border: 10px solid #686de0;
+  padding: 20px;
+  border-radius: 15px;
+}
+
+.section--container {
+  width: 100%;
+  justify-content: center;
+}
+
+form {
+  text-align: center;
+}
+
+#input {
+  border: none;
+  outline: 0;
+  background: #6EA0D7;
+  border-radius: 5px;
+  height: 4vh;
+  text-align: center;
+  width: 8.5rem;
+}
+
+#add--btn {
+  border: none;
+  background-color: #686de0;
+  border-radius: 3px;
+  font-size: 1.2rem;
+}
+
+.shopping--item {
+  text-align: center;
+  list-style: none;
+  border: 2px solid grey;
+  padding: 0.2rem;
+  margin-bottom: 1rem;
+  margin-left: 0;
+  flex-basis: 50%;
+}
+
+.shopping--list__container {
+  margin-top: 2rem;
+  background: white;
+  overflow: scroll;
+  height: 15vh;
+  width: 200px;
+}
+
+ul {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 2rem;
+  padding: 0;
+  flex-direction: row;
+  flex-wrap: wrap;
+}/*# sourceMappingURL=style.css.map */
