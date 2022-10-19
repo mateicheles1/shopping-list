@@ -4,7 +4,7 @@ import {shoppingList} from './elements.js';
 import {shoppingContainer} from './elements.js';
 
 
-class Buttons {
+class Button {
     constructor() {
 
     }
@@ -54,7 +54,7 @@ class ShoppingList {
     }
 
     getRemoveButton() {
-        const button = new Buttons();
+        const button = new Button();
         const removeButton = button.createDeleteButton();
         return removeButton; 
     }
