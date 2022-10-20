@@ -5,7 +5,7 @@ import {shoppingContainer} from './elements/elements.js';
 import {ShoppingList} from './components/ShoppingList.js';
 
 
-export function addItem(e) {
+function addItem(e) {
     e.preventDefault();
     const list = new ShoppingList(shoppingList);
     list.print();
@@ -16,7 +16,7 @@ export function addItem(e) {
     input.value = '';
 }
 
-export function removeItem (e) {
+function removeItem (e) {
     if(!e.target.classList.contains('delete--button')) return;
     const items = [...document.querySelectorAll('.shopping--item')];
     const itemIDs = items.map(item => item.id);
